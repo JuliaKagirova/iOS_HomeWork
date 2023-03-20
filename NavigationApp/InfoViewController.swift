@@ -7,7 +7,7 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
     private lazy var button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemYellow
@@ -27,23 +27,25 @@ class InfoViewController: UIViewController {
     }
     private func setupButton() {
         self.view.addSubview(self.button)
-        self.button.bottomAnchor.constraint(
-            equalTo: self.view.bottomAnchor,
-            constant: -100).isActive = true
-        self.button.leadingAnchor.constraint(
-            equalTo: self.view.leadingAnchor,
-            constant: 20).isActive = true
-        self.button.trailingAnchor.constraint(
-            equalTo: self.view.trailingAnchor,
-            constant: -20).isActive = true
-        self.button.heightAnchor.constraint(
-            equalToConstant: 50).isActive = true
+        NSLayoutConstraint.activate([
+            button.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                constant: -50),
+            button.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                constant: 20),
+            button.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                constant: -20),
+            button.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     @objc private func alertVC() {
         let alert = UIAlertController(
             title: "Удалить новый пост?",
             message: "Нажмите да, если хотите удалить новый пост",
-            preferredStyle: .actionSheet)
+            preferredStyle: .actionSheet
+        )
         alert.addAction(UIAlertAction(title: "Да", style: .default, handler: {action in
             print("Yes") } ))
         alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: {action in
@@ -56,4 +58,3 @@ class InfoViewController: UIViewController {
         dismiss(animated: true)
     }
 }
-

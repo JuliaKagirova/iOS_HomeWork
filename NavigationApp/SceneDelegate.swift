@@ -7,22 +7,20 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController =  createTabBarController()
         window?.makeKeyAndVisible()
     }
     func createFeedViewController() -> UINavigationController {
         let feedViewController = FeedViewController()
-
-        feedViewController.title = "Лента"
+        feedViewController.title = "Feed"
         feedViewController.tabBarItem = UITabBarItem(
-            title: "Лента",
+            title: "Feed",
             image: UIImage(systemName: "house.fill"),
             tag: 0
         )
@@ -30,10 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     func createProfileViewController() -> UINavigationController {
         let profileViewController = ProfileViewController()
-
-        profileViewController.title = "Профиль"
+        profileViewController.title = "Profile"
         profileViewController.tabBarItem = UITabBarItem(
-            title: "Профиль",
+            title: "Profile",
             image: UIImage(systemName: "person.fill"),
             tag: 1
         )
@@ -42,21 +39,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createTabBarController() -> UITabBarController {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [createFeedViewController(), createProfileViewController()]
-        UITabBar.appearance().backgroundColor = .lightGray
+        UITabBar.appearance().backgroundColor = .white
         return tabBarController
     }
 }
-    func sceneDidDisconnect(_ scene: UIScene) {
-    }
+func sceneDidDisconnect(_ scene: UIScene) {
+}
 
-    func sceneDidBecomeActive(_ scene: UIScene) {
-    }
+func sceneDidBecomeActive(_ scene: UIScene) {
+}
 
-    func sceneWillResignActive(_ scene: UIScene) {
-    }
+func sceneWillResignActive(_ scene: UIScene) {
+}
 
-    func sceneWillEnterForeground(_ scene: UIScene) {
-    }
+func sceneWillEnterForeground(_ scene: UIScene) {
+}
 
-    func sceneDidEnterBackground(_ scene: UIScene) {
-    }
+func sceneDidEnterBackground(_ scene: UIScene) {
+}

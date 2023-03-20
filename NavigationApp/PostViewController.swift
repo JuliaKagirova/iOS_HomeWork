@@ -7,9 +7,8 @@
 import UIKit
 
 class PostViewController: UIViewController {
-
+    
     var titlePost: String = "Anonymous"
-
     override func viewDidLoad() {
         super.viewDidLoad()
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonPressed) )
