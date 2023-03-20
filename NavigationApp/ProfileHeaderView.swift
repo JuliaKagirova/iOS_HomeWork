@@ -14,7 +14,6 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         view.layer.borderWidth = 3
         view.layer.borderColor = UIColor.white.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
     }()
     
@@ -24,7 +23,6 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
@@ -34,7 +32,6 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
@@ -48,11 +45,9 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         text.layer.borderWidth = 1
         text.layer.borderColor = UIColor.black.cgColor
         text.translatesAutoresizingMaskIntoConstraints = false
-        
         let paddingView = UIView(frame: CGRectMake(0, 0, 14, 0))
         text.leftView = paddingView
         text.leftViewMode = UITextField.ViewMode.always
-        
         return text
     }()
     
@@ -72,7 +67,17 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         button.addTarget(self, action: #selector(buttonPressed), for: .editingChanged)
         button.addTarget(self, action: #selector(statusTextChanged), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+        return button
+    }()
+    
+    private lazy var button: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 4
+        button.setTitle("Новая кнопка", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -83,7 +88,7 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         addSubview(statusLabel)
         addSubview(statusTextField)
         addSubview(setStatusButton)
-        
+        addSubview(button)
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -110,7 +115,11 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
             setStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             setStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             setStatusButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 78),
-            setStatusButton.heightAnchor.constraint(equalToConstant: 50)
+            setStatusButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            button.trailingAnchor.constraint(equalTo: trailingAnchor),
+            button.leadingAnchor.constraint(equalTo: leadingAnchor),
+            button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
