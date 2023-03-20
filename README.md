@@ -1,14 +1,25 @@
-# Домашняя работа UIVC
+# Основное задание
 
-Задание по UIViewController
+1. Создайте класс ProfileHeaderView, добавьте subviews, задайте положение и размер с помощью Auto Layout:
+avatarImageView,
+fullNameLabel,
+statusLabel,
+statusTextField,
+setStatusButton.
+2. На экране ProfileViewController добавьте ProfileHeaderView, задайте положение и размер с помощью Auto Layout:
+слева и справа нулевые отступы,
+сверху привяжите к Safe Area,
+высоту задайте равной 220.
+3. Удалить код в методе layoutSubviews().
 
-1. Создайте новый проект с названием Navigation, используя шаблон Single View App.
-2. Удалите из проекта Main.storyboard, который создался по умолчанию. Не забудьте изменить конфигурацию в Info.plist.
-3. В AppDelegate.swift добавьте UITabBarController. Добавьте в него два UINavigationController. Первый будет показывать ленту пользователя, а второй — профиль.
-4. Измените Tab Bar Item у добавленных контроллеров, добавьте заголовок и картинку. Картинки можно добавить в Assets.xcassets или использовать SF Symbols.
-5. Создайте FeedViewController и ProfileViewController и добавьте их как root view controller у навигационных контроллеров.
-6. Добавьте PostViewController для показа выбранного поста. Поменяйте заголовок у контроллера и цвет главной view. Добавьте кнопку на FeedViewController и сделайте переход на экран поста. Контроллер должен показаться в стеке UINavigationController.
-7. Создайте структуру Post со свойством title: String. Создайте объект типа Post в FeedViewController и передайте его в PostViewController. В классе PostViewController выставьте title полученного поста в качестве заголовка контроллера.
-8. На PostViewController добавьте Bar Button Item в навигейшн бар. При нажатии на него должен открываться новый контроллер InfoViewController. Контроллер должен показаться модально.
-9. На InfoViewController создайте кнопку. При нажатии на неё должен показаться UIAlertController с заданным title, message и двумя UIAlertAction. При нажатии на UIAlertAction в консоль должно выводиться сообщение
-10. 
+4. Добавьте новую UIButton, изменить title и задайте следующие правила отображения с помощью кода:
+слева и справа нулевые отступы,
+снизу привяжите к Safe Area.
+
+## Дополнительное задание (со звёздочкой)
+
+1. На экране FeedViewController создайте UIStackView с вертикальным расположением элементов. Удалите кнопку для открытия поста, которая была добавлена ранее.
+2. Расположите его по центру экрана.
+3. Добавьте две UIButton в UIStackView.
+4. Задайте spacing, равный 10.
+5. Добавьте открытие экрана PostViewController на нажатие каждой кнопки.
