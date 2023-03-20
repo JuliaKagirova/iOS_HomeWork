@@ -7,9 +7,8 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
     var post = Post(title: "Мой пост")
-
     private lazy var button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .purple
@@ -28,23 +27,22 @@ class FeedViewController: UIViewController {
     }
     private func setupButton() {
         self.view.addSubview(self.button)
-        self.button.bottomAnchor.constraint(
-            equalTo: self.view.bottomAnchor,
-            constant: -100).isActive = true
-        self.button.leadingAnchor.constraint(
-            equalTo: self.view.leadingAnchor,
-            constant: 20).isActive = true
-        self.button.trailingAnchor.constraint(
-            equalTo: self.view.trailingAnchor,
-            constant: -20).isActive = true
-        self.button.heightAnchor.constraint(
-            equalToConstant: 50).isActive = true
+        NSLayoutConstraint.activate([
+            button.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                constant: -50),
+            button.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                constant: 20),
+            button.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                constant: -20),
+            button.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     @objc private func buttonAction() {
         let postViewController = PostViewController()
         self.navigationController?.pushViewController(postViewController, animated: true)
         postViewController.titlePost = post.title
-
     }
 }
-
