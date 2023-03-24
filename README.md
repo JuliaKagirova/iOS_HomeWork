@@ -1,14 +1,14 @@
-# Домашняя работа UIVC
+# Экран 'Log In'
 
-Задание по UIViewController
-
-1. Создайте новый проект с названием Navigation, используя шаблон Single View App.
-2. Удалите из проекта Main.storyboard, который создался по умолчанию. Не забудьте изменить конфигурацию в Info.plist.
-3. В AppDelegate.swift добавьте UITabBarController. Добавьте в него два UINavigationController. Первый будет показывать ленту пользователя, а второй — профиль.
-4. Измените Tab Bar Item у добавленных контроллеров, добавьте заголовок и картинку. Картинки можно добавить в Assets.xcassets или использовать SF Symbols.
-5. Создайте FeedViewController и ProfileViewController и добавьте их как root view controller у навигационных контроллеров.
-6. Добавьте PostViewController для показа выбранного поста. Поменяйте заголовок у контроллера и цвет главной view. Добавьте кнопку на FeedViewController и сделайте переход на экран поста. Контроллер должен показаться в стеке UINavigationController.
-7. Создайте структуру Post со свойством title: String. Создайте объект типа Post в FeedViewController и передайте его в PostViewController. В классе PostViewController выставьте title полученного поста в качестве заголовка контроллера.
-8. На PostViewController добавьте Bar Button Item в навигейшн бар. При нажатии на него должен открываться новый контроллер InfoViewController. Контроллер должен показаться модально.
-9. На InfoViewController создайте кнопку. При нажатии на неё должен показаться UIAlertController с заданным title, message и двумя UIAlertAction. При нажатии на UIAlertAction в консоль должно выводиться сообщение
-10. 
+1. Создайте ColorSet используя Hex-code: #4885CC.
+2. Иконку VK скачайте из папки с Макетами, файл с именем Logo.png.
+3. В папке Profile создайте в ней новый файл LogInViewController.swift.
+4. В этом файле создайте одноименный класс-наследник UIViewController.
+5. Теперь при переключении таба Profile в TabBar должен открываться экран LogInViewController.swift.
+6. Скройте NavigationBar, используя navigationBar.isHidden = true.
+7. В классе LogInViewController у вас должна быть реализована вёрстка экрана «Log In» согласно макету Lesson_6_Layout_1.png. Вёрстку нужно выполнить кодом, используя Auto Layout.
+8. Вам нужно учесть тот факт, что диагональ устройства может быть разной, клавиатура может перекрывать поля ввода, поэтому используйте UIScrollView по аналогии с примером из лекции.
+9. Поле password должно скрывать введенные данные, как показано в макете Lesson_6_Layout_1_typing.png.
+10. Обработайте появление и исчезновение клавиатуры, используя код из лекции.
+11. Кнопка 'Log In' независимо от введённых данных должна отправлять юзера на экран профиля — ProfileViewController.
+12. Чтобы покрасить кнопку 'Log In' в соответствии с макетом, используйте изображение blue_pixel.png, которое также находится в папке Макеты, файл с именем Logo.png.
