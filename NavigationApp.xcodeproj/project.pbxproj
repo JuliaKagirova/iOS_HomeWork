@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F8E1D7829C995EB00C71563 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E1D7729C995EB00C71563 /* LogInViewController.swift */; };
 		1F94795829C830A300DD8C9F /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94795729C830A300DD8C9F /* ProfileHeaderView.swift */; };
 		1FEDAE9A29B2095400A788F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDAE9929B2095400A788F3 /* AppDelegate.swift */; };
 		1FEDAE9C29B2095400A788F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDAE9B29B2095400A788F3 /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F8E1D7729C995EB00C71563 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		1F94795729C830A300DD8C9F /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		1FEDAE9629B2095400A788F3 /* NavigationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEDAE9929B2095400A788F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +70,10 @@
 				1FEDAE9B29B2095400A788F3 /* SceneDelegate.swift */,
 				1FEDAEAF29B20A7000A788F3 /* FeedViewController.swift */,
 				1FEDAEAD29B20A4200A788F3 /* ProfileViewController.swift */,
-				1F94795729C830A300DD8C9F /* ProfileHeaderView.swift */,
+				1F8E1D7729C995EB00C71563 /* LogInViewController.swift */,
 				1FEDAEB329B20ABD00A788F3 /* InfoViewController.swift */,
 				1FEDAEB129B20A9F00A788F3 /* PostViewController.swift */,
+				1F94795729C830A300DD8C9F /* ProfileHeaderView.swift */,
 				1FEDAEB529B20B0B00A788F3 /* Post.swift */,
 				1FEDAEA229B2095800A788F3 /* Assets.xcassets */,
 				1FEDAEA429B2095800A788F3 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				1FEDAEAE29B20A4200A788F3 /* ProfileViewController.swift in Sources */,
 				1FEDAE9A29B2095400A788F3 /* AppDelegate.swift in Sources */,
+				1F8E1D7829C995EB00C71563 /* LogInViewController.swift in Sources */,
 				1FEDAEB029B20A7000A788F3 /* FeedViewController.swift in Sources */,
 				1FEDAE9C29B2095400A788F3 /* SceneDelegate.swift in Sources */,
 				1FEDAEB429B20ABD00A788F3 /* InfoViewController.swift in Sources */,

@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController =  createTabBarController()
         window?.makeKeyAndVisible()
     }
+    
     func createFeedViewController() -> UINavigationController {
         let feedViewController = FeedViewController()
         feedViewController.title = "Feed"
@@ -27,21 +28,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return UINavigationController(rootViewController: feedViewController)
     }
     func createProfileViewController() -> UINavigationController {
-        let profileViewController = ProfileViewController()
-        profileViewController.title = "Profile"
-        profileViewController.tabBarItem = UITabBarItem(
+        let logInViewController = LogInViewController()
+        logInViewController.tabBarItem = UITabBarItem(
             title: "Profile",
             image: UIImage(systemName: "person.fill"),
             tag: 1
         )
-        return UINavigationController(rootViewController: profileViewController)
+        return UINavigationController(rootViewController: logInViewController)
     }
+    
     func createTabBarController() -> UITabBarController {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [createFeedViewController(), createProfileViewController()]
-        UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().backgroundColor = .systemGray2
         return tabBarController
     }
+    
 }
 func sceneDidDisconnect(_ scene: UIScene) {
 }
