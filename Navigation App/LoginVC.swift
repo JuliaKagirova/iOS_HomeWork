@@ -6,6 +6,27 @@
 
 import UIKit
 
+class CustomButton: UIButton {
+    override var isHighlighted: Bool {
+        didSet {
+            if (isHighlighted) {
+                alpha = 0.8
+            } else {
+                alpha = 1
+            }
+        }
+    }
+    override var isSelected: Bool {
+        didSet {
+            if (isSelected) {
+                alpha = 0.8
+            } else {
+                alpha = 1
+            }
+        }
+    }
+}
+
 class LogInVC: UIViewController, UIScrollViewDelegate {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -71,35 +92,16 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
         passwordTextField.leftViewMode = UITextField.ViewMode.always
         return passwordTextField
     }()
-    private let buttonLogIn: UIButton = {
-        let button = UIButton()
+    private let buttonLogIn: CustomButton = {
+        let button = CustomButton()
         button.setTitle("Log In", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.setTitleColor(.white, for: .normal)
-        // button.backgroundColor = #colorLiteral(red: 0.2823529412, green: 0.5215686275, blue: 0.8, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.2823529412, green: 0.5215686275, blue: 0.8, alpha: 1)
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(logIn), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(logIn), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
-        let imageButtonNormalState = UIImage(named: "blue_pixel")
-        let imageViewNormalState = UIImageView(image: imageButtonNormalState)
-        imageViewNormalState.alpha = 1
-        button.setBackgroundImage(imageButtonNormalState, for: .normal)
-        
-        let imageButtonSelectedState = UIImage(named: "blue_pixel")
-        let imageViewSelectedState = UIImageView(image: imageButtonSelectedState)
-        imageViewSelectedState.alpha = 0.8
-        button.setBackgroundImage(imageButtonSelectedState, for: .selected)
-        
-        let imageButtonHighlightedState = UIImage(named: "blue_pixel")
-        let imageViewHighlightedState = UIImageView(image: imageButtonHighlightedState)
-        imageViewHighlightedState.alpha = 0.8
-        button.setBackgroundImage(imageButtonHighlightedState, for: .highlighted)
-        
-        let imageButtonDisabledState = UIImage(named: "blue_pixel")
-        let imageViewDisabledState = UIImageView(image: imageButtonDisabledState)
-        imageViewDisabledState.alpha = 0.8
-        button.setBackgroundImage(imageButtonDisabledState, for: .disabled)
+        button.clipsToBounds = true
         return button
     }()
     override func viewDidLoad() {

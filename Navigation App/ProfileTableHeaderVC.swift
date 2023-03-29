@@ -42,6 +42,8 @@ class TableHeader: UITableViewHeaderFooterView {
         text.layer.backgroundColor = UIColor.white.cgColor
         text.layer.borderWidth = 1
         text.layer.borderColor = UIColor.black.cgColor
+        text.keyboardType = UIKeyboardType.default
+        text.returnKeyType = UIReturnKeyType.done
         text.translatesAutoresizingMaskIntoConstraints = false
         let paddingView = UIView(frame: CGRectMake(0, 0, 14, 0))
         text.leftView = paddingView
@@ -60,8 +62,8 @@ class TableHeader: UITableViewHeaderFooterView {
         button.layer.cornerRadius = 12
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.7
-        button.addTarget(self, action: #selector(buttonPressed), for: .editingChanged)
-        button.addTarget(self, action: #selector(statusTextChanged), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(buttonPressed), for: .editingChanged)
+        button.addTarget(nil, action: #selector(statusTextChanged), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,7 +71,7 @@ class TableHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         configureContents()
     }
-    func configureContents() {
+        func configureContents() {
         [avatarImageView, fullNameLabel, statusLabel, statusTextField, setStatusButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints  = false
             contentView.addSubview($0)
@@ -118,7 +120,7 @@ class ProfileTableHeaderVC: UIViewController {
     
     var posts = Source.makePost()
     let tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.id)
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
