@@ -1,14 +1,14 @@
-# Домашняя работа UIVC
+# Экран 'Profile'
 
-Задание по UIViewController
+Создайте модель публикации Post, она должна содержать следующие поля: author: String - никнейм автора публикации description: String - текст публикации image: String - имя картинки из каталога Assets.xcassets likes: Int - количество лайков views: Int - количество просмотров
+Создайте массив из минимум четырех публикаций. Все данные, в том числе изображения для публикаций, используйте на свой вкус.
+Вам нужно удалить весь ранее написанный код в классе ProfileViewController.
+Внимание! Если вы выполнили прошлое задание не в отдельном классе-наследнике UIView, то нужно перенести всю верстку в отдельный файл ProfileTableHederView.swift, в котором должен быть класс-наследник UIView с именем ProfileHeaderView.
 
-1. Создайте новый проект с названием Navigation, используя шаблон Single View App.
-2. Удалите из проекта Main.storyboard, который создался по умолчанию. Не забудьте изменить конфигурацию в Info.plist.
-3. В AppDelegate.swift добавьте UITabBarController. Добавьте в него два UINavigationController. Первый будет показывать ленту пользователя, а второй — профиль.
-4. Измените Tab Bar Item у добавленных контроллеров, добавьте заголовок и картинку. Картинки можно добавить в Assets.xcassets или использовать SF Symbols.
-5. Создайте FeedViewController и ProfileViewController и добавьте их как root view controller у навигационных контроллеров.
-6. Добавьте PostViewController для показа выбранного поста. Поменяйте заголовок у контроллера и цвет главной view. Добавьте кнопку на FeedViewController и сделайте переход на экран поста. Контроллер должен показаться в стеке UINavigationController.
-7. Создайте структуру Post со свойством title: String. Создайте объект типа Post в FeedViewController и передайте его в PostViewController. В классе PostViewController выставьте title полученного поста в качестве заголовка контроллера.
-8. На PostViewController добавьте Bar Button Item в навигейшн бар. При нажатии на него должен открываться новый контроллер InfoViewController. Контроллер должен показаться модально.
-9. На InfoViewController создайте кнопку. При нажатии на неё должен показаться UIAlertController с заданным title, message и двумя UIAlertAction. При нажатии на UIAlertAction в консоль должно выводиться сообщение
-10. 
+Добавьте экземпляр класса UITableView и закрепите его к краям экрана.
+Класс ProfileViewController должен реализовать протоколы UITableViewDelegate и UITableViewDataSource. Примените extension инструмент.
+Ранее созданный массив с публикациями используйте в качестве источника данных для таблицы.
+Используйте ProfileTableHederView в качестве HeaderForSection для нулевой секции.
+Создайте файл PostTableViewCell.swift и добавьте в него класс UITableViewCell с именем PostTableViewCell.
+Реализуйте верстку в только что созданном классе согласно макету Lesson_6_Layout_3. Используйте Auto Layout.
+Используйте созданную ячейку для отображения контента публикации.
