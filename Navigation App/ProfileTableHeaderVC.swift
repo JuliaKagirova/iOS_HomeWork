@@ -71,7 +71,7 @@ class TableHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         configureContents()
     }
-        func configureContents() {
+    func configureContents() {
         [avatarImageView, fullNameLabel, statusLabel, statusTextField, setStatusButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints  = false
             contentView.addSubview($0)
@@ -117,7 +117,6 @@ class TableHeader: UITableViewHeaderFooterView {
     }
 }
 class ProfileTableHeaderVC: UIViewController {
-    
     var posts = Source.makePost()
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)

@@ -7,7 +7,7 @@
 import UIKit
 
 class PostVC: UIViewController {
-    
+
     var titlePost: String = "Posts"
     
     override func viewDidLoad() {

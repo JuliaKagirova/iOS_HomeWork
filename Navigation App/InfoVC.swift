@@ -7,6 +7,7 @@
 import UIKit
 
 class InfoVC: UIViewController {
+    
     private lazy var button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemYellow

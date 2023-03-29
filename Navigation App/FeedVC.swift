@@ -5,6 +5,7 @@
 //
 
 import UIKit
+
 class FeedVC: UIViewController {
     
     var post = Post(title: "Мой пост")

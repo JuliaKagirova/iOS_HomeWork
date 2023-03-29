@@ -28,6 +28,7 @@ class CustomButton: UIButton {
 }
 
 class LogInVC: UIViewController, UIScrollViewDelegate {
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
