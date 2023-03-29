@@ -7,7 +7,6 @@
 import UIKit
 class FeedVC: UIViewController {
     
-    
     var post = Post(title: "Мой пост")
     
     private lazy var button1: UIButton = {
@@ -20,7 +19,6 @@ class FeedVC: UIViewController {
         button1.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button1
     }()
-    
     private lazy var button2: UIButton = {
         let button2 = UIButton()
         button2.backgroundColor = .blue
@@ -31,7 +29,6 @@ class FeedVC: UIViewController {
         button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button2
     }()
-    
     private var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +39,6 @@ class FeedVC: UIViewController {
         stackView.spacing = 10
         return stackView
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
@@ -51,13 +47,11 @@ class FeedVC: UIViewController {
         stackView.addArrangedSubview(self.button1)
         stackView.addArrangedSubview(self.button2)
     }
-    
     @objc private func buttonAction() {
         let postViewController = PostVC()
         self.navigationController?.pushViewController(postViewController, animated: true)
         postViewController.titlePost = post.title
     }
-    
     private func setupContraints() {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo:  self.view.leadingAnchor, constant: 20),

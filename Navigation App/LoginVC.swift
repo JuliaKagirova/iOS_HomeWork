@@ -100,7 +100,6 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
         let imageViewDisabledState = UIImageView(image: imageButtonDisabledState)
         imageViewDisabledState.alpha = 0.8
         button.setBackgroundImage(imageButtonDisabledState, for: .disabled)
-        
         return button
     }()
     override func viewDidLoad() {

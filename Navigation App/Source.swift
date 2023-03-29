@@ -22,7 +22,8 @@ struct Description {
 }
 struct Source {
     static func makePost() -> [Posts] {
-        [.init(author: "Summer  \nlong name", image: UIImage(named: "Summer")!, description: Description.summerDescript, likes: 123, view: 234),
+        [
+            .init(author: "Summer  \nlong name", image: UIImage(named: "Summer")!, description: Description.summerDescript, likes: 123, view: 234),
          .init(author: "Winter", image: UIImage(named: "Winter")!, description: Description.winterDescript, likes: 234, view: 345),
          .init(author: "Spring", image: UIImage(named: "Spring")!, description: Description.springDescript, likes: 345, view: 456),
          .init(author: "Automne", image: UIImage(named: "Automne")!, description: Description.automneDescript, likes: 456, view: 567)

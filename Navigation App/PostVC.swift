@@ -14,7 +14,6 @@ class PostVC: UIViewController {
         super.viewDidLoad()
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonPressed) )
         navigationItem.rightBarButtonItem = button
-        
         setupView()
     }
     @objc func buttonPressed(_sender: UIButton) {

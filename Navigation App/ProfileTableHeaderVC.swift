@@ -68,7 +68,6 @@ class TableHeader: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         configureContents()
-        //addSubview(ProfileHeaderView())
     }
     func configureContents() {
         [avatarImageView, fullNameLabel, statusLabel, statusTextField, setStatusButton].forEach {
@@ -128,7 +127,6 @@ class ProfileTableHeaderVC: UIViewController {
         tableView.separatorColor = .gray
         tableView.rowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
-        
         return tableView
     }()
     override func viewDidLoad() {
