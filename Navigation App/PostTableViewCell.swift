@@ -15,30 +15,31 @@ class PostTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = .black
         label.numberOfLines = 2
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    var image = UIImageView()
+    let image: UIImageView = {
+        let image = UIImageView()
+        image.backgroundColor = .white
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .systemGray
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     let likesLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     let viewLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -54,7 +55,6 @@ class PostTableViewCell: UITableViewCell {
             contentView.addSubview($0)
         }
         NSLayoutConstraint.activate([
-            
             author.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             author.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             author.bottomAnchor.constraint(equalTo: image.topAnchor, constant: -12),
@@ -63,7 +63,7 @@ class PostTableViewCell: UITableViewCell {
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             image.heightAnchor.constraint(equalToConstant: 400),
-            image.widthAnchor.constraint(equalToConstant: 100),
+            image.widthAnchor.constraint(equalToConstant: 100), //400?
             image.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -16),
             
             descriptionLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 16),

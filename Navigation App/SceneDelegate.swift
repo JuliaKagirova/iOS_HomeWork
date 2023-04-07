@@ -9,12 +9,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController =  createTabBarController()
         window?.makeKeyAndVisible()
     }
+    
     func createFeedViewController() -> UINavigationController {
         let feedViewController = FeedVC()
         feedViewController.title = "Feed"
@@ -25,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         return UINavigationController(rootViewController: feedViewController)
     }
+    
     func createProfileViewController() -> UINavigationController {
         let logInViewController = LogInVC()
         logInViewController.tabBarItem = UITabBarItem(
@@ -34,6 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         return UINavigationController(rootViewController: logInViewController)
     }
+    
     func createTabBarController() -> UITabBarController {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [createFeedViewController(), createProfileViewController()]
@@ -41,6 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return tabBarController
     }
 }
+
 func sceneDidDisconnect(_ scene: UIScene) {
 }
 

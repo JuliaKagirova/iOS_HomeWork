@@ -9,11 +9,10 @@ import UIKit
 class FeedVC: UIViewController {
     
     var post = Post(title: "Мой пост")
-    
     private lazy var button1: UIButton = {
         let button1 = UIButton()
         button1.backgroundColor = .purple
-        button1.layer.cornerRadius = 12
+        button1.layer.cornerRadius = 10
         button1.setTitle("Перейти на пост", for: .normal)
         button1.setTitleColor(.white, for: .normal)
         button1.titleLabel?.font = UIFont.systemFont(ofSize: 16)
@@ -23,7 +22,7 @@ class FeedVC: UIViewController {
     private lazy var button2: UIButton = {
         let button2 = UIButton()
         button2.backgroundColor = .blue
-        button2.layer.cornerRadius = 12
+        button2.layer.cornerRadius = 10
         button2.setTitle("Перейти на пост", for: .normal)
         button2.setTitleColor(.white, for: .normal)
         button2.titleLabel?.font = UIFont.systemFont(ofSize: 16)

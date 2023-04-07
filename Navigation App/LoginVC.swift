@@ -131,11 +131,10 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
         scrollView.contentInset.bottom = 0.0
     }
     @objc func logIn(sender: UIButton) {
-        let profileTableHeaderView = ProfileTableHeaderVC()
-        self.navigationController?.pushViewController(profileTableHeaderView, animated: true)
+        let profileVC = ProfileVC()
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
     private func addSubview() {
-        view.addSubview(scrollView)
         scrollView.addSubview(stackView)
     }
     private func  setupContentOfScrollView() {
@@ -156,12 +155,8 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
         stackView.subviews.last?.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
     private func setupUI() {
-        view.addSubview(scrollView)
         scrollView.addSubview(stackView)
         stackView.addSubview(logoImageView)
-        stackView.addSubview(loginTextField)
-        stackView.addSubview(passwordTextField)
-        stackView.addSubview(buttonLogIn)
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),

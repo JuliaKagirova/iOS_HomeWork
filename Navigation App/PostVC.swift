@@ -7,12 +7,11 @@
 import UIKit
 
 class PostVC: UIViewController {
-
-    var titlePost: String = "Posts"
     
+    var titlePost: String = "Posts"
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonPressed) )
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonPressed))
         navigationItem.rightBarButtonItem = button
         setupView()
     }
@@ -26,6 +25,5 @@ class PostVC: UIViewController {
         self.view.backgroundColor = .lightGray
         self.navigationItem.title = titlePost
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
 }
