@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ProfileTableHeaderView: UIViewController {
     let header: ProfileHeaderView = {
         var header = ProfileHeaderView()
         header.translatesAutoresizingMaskIntoConstraints = false
@@ -82,9 +82,15 @@ class ProfileVC: UIViewController {
         self.navigationController?.pushViewController(photosVC, animated: true)
     }
 }
-extension ProfileVC: UITableViewDelegate {
+extension ProfileTableHeaderView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension 
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        UITableView.automaticDimension
+    }
 }
-extension ProfileVC: UITableViewDataSource {
+extension ProfileTableHeaderView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         1
