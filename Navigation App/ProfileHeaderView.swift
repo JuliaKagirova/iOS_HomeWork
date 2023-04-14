@@ -10,9 +10,10 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
     
     private let avatarImageView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "cat"))
-        view.layer.cornerRadius = 40
+        view.layer.cornerRadius = 40 
         view.layer.borderWidth = 3
         view.layer.borderColor = UIColor.white.cgColor
+        view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -79,8 +80,8 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 80),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 80),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 90),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 90),
             
             fullNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 27),
             fullNameLabel.leftAnchor.constraint(equalTo: avatarImageView.rightAnchor, constant: 40),
@@ -108,11 +109,14 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     @objc func buttonPressed(sender: UIButton) {
         print(statusText)
     }
+    
     @objc func statusTextChanged(_textField: UITextField) {
         statusLabel.text! = statusTextField.text!
         print("Text changed \(statusLabel.text!)")
     }
 }
+

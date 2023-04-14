@@ -15,12 +15,14 @@ class PostVC: UIViewController {
         navigationItem.rightBarButtonItem = button
         setupView()
     }
+    
     @objc func buttonPressed(_sender: UIButton) {
         let infoViewController = InfoVC()
         infoViewController.modalTransitionStyle = .flipHorizontal
         infoViewController.modalPresentationStyle = .pageSheet
         present(infoViewController, animated: true)
     }
+    
     func setupView() {
         self.view.backgroundColor = .lightGray
         self.navigationItem.title = titlePost

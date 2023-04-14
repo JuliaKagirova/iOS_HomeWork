@@ -80,6 +80,7 @@ class PostTableViewCell: UITableViewCell {
             viewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -16)
         ])
     }
+    
     func configure(posts: Posts) {
         author.text = posts.author
         image.image = posts.image

@@ -25,6 +25,7 @@ class InfoVC: UIViewController {
         setupButton()
         alertVC()
     }
+    
     private func setupButton() {
         self.view.addSubview(self.button)
         NSLayoutConstraint.activate([
@@ -34,6 +35,7 @@ class InfoVC: UIViewController {
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
     @objc private func alertVC() {
         let alert = UIAlertController(
             title: "Удалить новый пост?",
@@ -43,6 +45,7 @@ class InfoVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: {action in self.cancelButton(); print("No") } ))
         self.present(alert, animated: true)
     }
+    
     func cancelButton() {
         dismiss(animated: true)
     }

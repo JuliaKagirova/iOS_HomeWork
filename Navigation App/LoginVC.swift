@@ -123,20 +123,25 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
         super.viewWillDisappear(animated)
         removeKeyboardObservers()
     }
+    
     @objc func willShowKeyboard(_notification: NSNotification) {
         let keyboardHeight = (_notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height
         scrollView.contentInset.bottom += keyboardHeight ?? 0.0
     }
+    
     @objc func willHideKeyboard(_ notification: NSNotification) {
         scrollView.contentInset.bottom = 0.0
     }
+    
     @objc func logIn(sender: UIButton) {
-        let profileVC = ProfileTableHeaderView()
+        let profileVC = ProfileTableHeaderVC()
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
+    
     private func addSubview() {
         scrollView.addSubview(stackView)
     }
+    
     private func  setupContentOfScrollView() {
         for _ in 0...2 {
             loginTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -154,6 +159,7 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
         }
         stackView.subviews.last?.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
+    
     private func setupUI() {
         scrollView.addSubview(stackView)
         stackView.addSubview(logoImageView)
@@ -193,6 +199,7 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
             buttonLogIn.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
         ])
     }
+    
     private func setupKeyboardObservers() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(
@@ -206,11 +213,13 @@ class LogInVC: UIViewController, UIScrollViewDelegate {
             name: UIResponder.keyboardDidHideNotification,
             object: nil)
     }
+    
     private func removeKeyboardObservers() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
     }
 }
+
 extension LogInVC: UITextFieldDelegate {
     func textFieldShouldReturn(
         _ textField: UITextField

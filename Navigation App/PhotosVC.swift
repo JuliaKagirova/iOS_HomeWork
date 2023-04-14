@@ -32,6 +32,7 @@ class PhotosVC: UIViewController {
         collectionView.dataSource = self
         collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "\(PhotosCollectionViewCell.self)")
     }
+    
     func setupFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -41,10 +42,12 @@ class PhotosVC: UIViewController {
         return layout
     }
 }
+
 extension PhotosVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         source2.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotosCollectionViewCell.self)", for: indexPath) as?
                 PhotosCollectionViewCell else { return UICollectionViewCell() }

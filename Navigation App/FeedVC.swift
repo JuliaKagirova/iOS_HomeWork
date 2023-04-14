@@ -47,11 +47,13 @@ class FeedVC: UIViewController {
         stackView.addArrangedSubview(self.button1)
         stackView.addArrangedSubview(self.button2)
     }
+    
     @objc private func buttonAction() {
         let postViewController = PostVC()
         self.navigationController?.pushViewController(postViewController, animated: true)
         postViewController.titlePost = post.title
     }
+    
     private func setupContraints() {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo:  self.view.leadingAnchor, constant: 20),
