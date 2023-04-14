@@ -8,9 +8,8 @@
 import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
-    
+
     static let id = "PhotosTableViewCell"
-    
     var photoLabel: UILabel = {
         let label = UILabel()
         label.text = "Photos"

@@ -8,6 +8,7 @@
 import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
+    
     var imageView = UIImageView()
     override init(frame: CGRect) {
         super.init(frame: frame)

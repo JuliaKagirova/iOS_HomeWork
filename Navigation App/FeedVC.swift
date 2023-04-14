@@ -7,7 +7,6 @@
 import UIKit
 
 class FeedVC: UIViewController {
-    
     var post = Post(title: "Мой пост")
     private lazy var button1: UIButton = {
         let button1 = UIButton()

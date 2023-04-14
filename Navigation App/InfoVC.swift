@@ -25,7 +25,6 @@ class InfoVC: UIViewController {
         setupButton()
         alertVC()
     }
-    
     private func setupButton() {
         self.view.addSubview(self.button)
         NSLayoutConstraint.activate([

@@ -70,6 +70,7 @@ final class ProfileHeaderView: UIView, UITextFieldDelegate {
         configureContents()
         backgroundColor = .systemGray6
     }
+    
     func configureContents() {
         addSubview(avatarImageView)
         addSubview(fullNameLabel)

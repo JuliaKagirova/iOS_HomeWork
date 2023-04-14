@@ -53,8 +53,8 @@ class ProfileTableHeaderVC: UIViewController {
             tableViewPost.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
-    
 }
+
 extension ProfileTableHeaderVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -18,6 +18,7 @@ class PhotosVC: UIViewController {
         view.backgroundColor = .systemGray6
         self.title = "Photo Gallery"
     }
+    
     func setupCollectionView() {
         layout = setupFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
