@@ -21,7 +21,7 @@ class ProfileTableHeaderVC: UIViewController {
         tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: PhotosTableViewCell.id)
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.id)
         tableView.separatorStyle = .singleLine
-        tableView.separatorInset = .init(top: 20, left: 16, bottom: 20, right: 16)
+        tableView.separatorInset = .init(top: 16, left: 16, bottom: 16, right: 16)
         tableView.separatorColor = .gray
         return tableView
     }()

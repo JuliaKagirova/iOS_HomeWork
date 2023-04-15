@@ -54,7 +54,7 @@ class PostTableViewCell: UITableViewCell {
             contentView.addSubview($0)
         }
         NSLayoutConstraint.activate([
-            author.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            author.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16), 
             author.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             author.bottomAnchor.constraint(equalTo: image.topAnchor, constant: -12),
             

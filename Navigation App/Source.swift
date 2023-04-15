@@ -71,5 +71,4 @@ struct Source2 {
             .init(id: 4, image: UIImage(named: "4")!, imageName: "4")
         ]
     }
-    
 }
